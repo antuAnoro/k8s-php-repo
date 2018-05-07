@@ -9,7 +9,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC"); // usin
 
 <html>
 <head>	
-	<title>Homepage</title>
+	<title>Homepage en <?php echo gethostname(); ?></title>
 </head>
 
 <body>
