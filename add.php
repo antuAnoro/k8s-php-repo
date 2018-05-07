@@ -38,14 +38,14 @@ if(isset($_POST['Submit'])) {
 		$result = mysqli_query($mysqli, $query);
 
 		if(empty($result)) {
-				$query = "CREATE TABLE USERS (
-					  ID int(11) NOT NULL AUTO_INCREMENT,
-					  NAME varchar(100) NOT NULL,
-					  AGE int(3) NOT NULL,
-					  EMAIL varchar(100) NOT NULL,					 
-					  PRIMARY KEY  (ID)
-					  )";
-				$result = mysqli_query($dbConnection, $query);
+			$query = "CREATE TABLE USERS (
+				  ID int(11) NOT NULL AUTO_INCREMENT,
+				  NAME varchar(100) NOT NULL,
+				  AGE int(3) NOT NULL,
+				  EMAIL varchar(100) NOT NULL,					 
+				  PRIMARY KEY  (ID)
+				  )";
+			$result = mysqli_query($mysqli, $query);
 		}
 			
 		//insert data to database	
