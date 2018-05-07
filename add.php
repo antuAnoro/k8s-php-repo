@@ -34,16 +34,16 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 		
 		//creamos la tabla si no existiese
-		$query = "SELECT ID FROM USERS";
+		$query = "SELECT id FROM users";
 		$result = mysqli_query($mysqli, $query);
 
 		if(empty($result)) {
-			$query = "CREATE TABLE USERS (
-				  ID int(11) NOT NULL AUTO_INCREMENT,
-				  NAME varchar(100) NOT NULL,
-				  AGE int(3) NOT NULL,
-				  EMAIL varchar(100) NOT NULL,					 
-				  PRIMARY KEY  (ID)
+			$query = "CREATE TABLE users (
+				  id int(11) NOT NULL AUTO_INCREMENT,
+				  name varchar(100) NOT NULL,
+				  age int(3) NOT NULL,
+				  email varchar(100) NOT NULL,					 
+				  PRIMARY KEY  (id)
 				  )";
 			$result = mysqli_query($mysqli, $query);
 		}
