@@ -32,6 +32,21 @@ if(isset($_POST['Submit'])) {
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
 	} else { 
 		// if all the fields are filled (not empty) 
+		
+		//creamos la tabla si no existiese
+		$query = "SELECT ID FROM USERS";
+		$result = mysqli_query($mysqli, $query);
+
+		if(empty($result)) {
+				$query = "CREATE TABLE USERS (
+					  ID int(11) NOT NULL AUTO_INCREMENT,
+					  NAME varchar(100) NOT NULL,
+					  AGE int(3) NOT NULL,
+					  EMAIL varchar(100) NOT NULL,					 
+					  PRIMARY KEY  (ID)
+					  )";
+				$result = mysqli_query($dbConnection, $query);
+		}
 			
 		//insert data to database	
 		$result = mysqli_query($mysqli, "INSERT INTO users(name,age,email) VALUES('$name','$age','$email')");
